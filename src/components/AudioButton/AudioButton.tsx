@@ -38,12 +38,17 @@ function SoundOffIcon() {
 export function AudioButton({ src }: AudioButtonProps) {
   const navigate = useNavigate();
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [isMuted, setIsMuted] = useState(false);
+  const storageKey = `audio-muted:${src}`;
+  const [isMuted, setIsMuted] = useState(
+    () => sessionStorage.getItem(storageKey) === 'true',
+  );
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
+    const wasMuted = sessionStorage.getItem(storageKey) === 'true';
     const audio = new Audio(src);
     audio.loop = true;
+    audio.muted = wasMuted;
     audioRef.current = audio;
 
     audio
@@ -55,7 +60,7 @@ export function AudioButton({ src }: AudioButtonProps) {
       audio.pause();
       audio.src = '';
     };
-  }, [src]);
+  }, [src, storageKey]);
 
   const toggle = useCallback(() => {
     const audio = audioRef.current;
@@ -64,16 +69,20 @@ export function AudioButton({ src }: AudioButtonProps) {
     if (!isPlaying) {
       audio.play().then(() => {
         setIsPlaying(true);
-        setIsMuted(false);
+        const wasMuted = sessionStorage.getItem(storageKey) === 'true';
+        setIsMuted(wasMuted);
+        audio.muted = wasMuted;
       });
       return;
     }
 
     setIsMuted((prev) => {
-      audio.muted = !prev;
-      return !prev;
+      const next = !prev;
+      audio.muted = next;
+      sessionStorage.setItem(storageKey, String(next));
+      return next;
     });
-  }, [isPlaying]);
+  }, [isPlaying, storageKey]);
 
   const showMuted = !isPlaying || isMuted;
 
