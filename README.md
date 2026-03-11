@@ -1,6 +1,6 @@
 # Vai Corinthians!
 
-O "Vai Corinthians!" é uma brincadeira de Laura Esteves para testar a lealdade dos seus amigos. Você é Corinthians ou está errado? Escolha sabiamente — as consequências são sonoras. Mais um site de extrema utilidade pública.
+O "Vai Corinthians!" é uma brincadeira de Laura Esteves para testar a lealdade dos seus amigos. Mais um site de extrema utilidade pública.
 
 ## Comandos
 
