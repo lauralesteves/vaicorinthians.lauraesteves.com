@@ -1,0 +1,119 @@
+.team-select-container {
+  position: relative;
+  min-width: 300px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.team-select-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 4px solid #CC2031;
+  background: white;
+  color: black;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.team-select-chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: rotate 0.2s ease-out;
+}
+
+.team-select-chevron.open {
+  rotate: 180deg;
+}
+
+.team-select-dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  border: 4px solid #CC2031;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 60;
+  animation: dropdown-in 0.2s ease-out;
+}
+
+@keyframes dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.team-select-search {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.team-select-search input {
+  width: 100%;
+  padding: 6px 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.team-select-search input:focus {
+  border-color: #CC2031;
+}
+
+.team-select-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.team-select-dropdown li button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-top: 1px solid #eee;
+  background: white;
+  color: black;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease-out, background 0.2s ease-out;
+}
+
+.team-select-dropdown li:first-child button {
+  border-top: 0;
+}
+
+.team-select-dropdown li button:where(:hover, :focus) {
+  background: #CC2031;
+  color: white;
+}
+
+.team-select-dropdown li button img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.team-select-empty {
+  padding: 14px 10px;
+  text-align: center;
+  color: #999;
+}
