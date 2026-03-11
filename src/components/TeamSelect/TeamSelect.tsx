@@ -10,18 +10,20 @@ export function TeamSelect() {
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const filtered = teams.filter((t) =>
-    t.name
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .toLowerCase()
-      .includes(
-        search
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '')
-          .toLowerCase(),
-      ),
-  );
+  const filtered = teams
+    .filter((t) =>
+      t.name
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .includes(
+          search
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase(),
+        ),
+    )
+    .sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
 
   const toggle = useCallback(() => {
     setIsOpen((prev) => {
