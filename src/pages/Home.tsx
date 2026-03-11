@@ -9,7 +9,7 @@ export function Home() {
         style={{ backgroundImage: "url('/images/background.webp')" }}
       />
 
-      <div className="relative z-10 flex flex-col items-center gap-10">
+      <div className="relative z-10 flex flex-col items-center gap-10 -translate-y-[120px] md:translate-y-0">
         <Link
           to="/curintia"
           className="bg-corinthians-red text-white font-display text-3xl md:text-4xl px-12 py-5 rounded-full no-underline hover:brightness-110 transition-all shadow-lg tracking-wider"
