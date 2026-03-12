@@ -19,7 +19,7 @@ export function Home() {
 
         <div className="flex flex-col items-center gap-4">
           <span className="text-white font-display text-2xl md:text-3xl tracking-wide">
-            Sai fora, mano, sou:
+            Sai fora mano, sou:
           </span>
           <TeamSelect />
         </div>
