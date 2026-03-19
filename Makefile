@@ -3,7 +3,11 @@ CLOUDFRONT_DISTRIBUTION_ID := $(shell aws cloudfront list-distributions --query 
 
 export AWS_PAGER :=
 
-.PHONY: build deploy clean
+.PHONY: build deploy clean server
+
+## Servidor de desenvolvimento
+server:
+	yarn dev
 
 ## Build do site Vite
 build:

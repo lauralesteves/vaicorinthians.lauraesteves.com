@@ -26,4 +26,7 @@ function htmlPlugin(): Plugin {
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), htmlPlugin()],
+  server: {
+    port: 5001,
+  },
 });
