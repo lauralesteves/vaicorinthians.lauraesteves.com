@@ -11,7 +11,7 @@
   width: 100%;
   padding: 10px 20px;
   border-radius: 30px;
-  border: 4px solid #CC2031;
+  border: 4px solid #cc2031;
   background: white;
   color: black;
   font-size: 1rem;
@@ -35,7 +35,7 @@
   top: calc(100% + 5px);
   left: 0;
   right: 0;
-  border: 4px solid #CC2031;
+  border: 4px solid #cc2031;
   background: white;
   border-radius: 12px;
   overflow: hidden;
@@ -70,7 +70,7 @@
 }
 
 .team-select-search input:focus {
-  border-color: #CC2031;
+  border-color: #cc2031;
 }
 
 .team-select-dropdown ul {
@@ -94,7 +94,9 @@
   font-size: 1rem;
   font-family: inherit;
   cursor: pointer;
-  transition: color 0.2s ease-out, background 0.2s ease-out;
+  transition:
+    color 0.2s ease-out,
+    background 0.2s ease-out;
 }
 
 .team-select-dropdown li:first-child button {
@@ -102,7 +104,7 @@
 }
 
 .team-select-dropdown li button:where(:hover, :focus) {
-  background: #CC2031;
+  background: #cc2031;
   color: white;
 }
 

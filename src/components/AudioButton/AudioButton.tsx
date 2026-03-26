@@ -94,7 +94,10 @@ export function AudioButton({ src }: AudioButtonProps) {
         className="bg-white text-black rounded-full px-6 py-3 flex items-center gap-2 shadow-lg hover:bg-gray-100 transition-colors cursor-pointer font-body font-semibold"
         aria-label="Voltar"
       >
-        <i className="fa-solid fa-arrow-left text-2xl w-8 h-8 flex items-center justify-center" aria-hidden="true" />
+        <i
+          className="fa-solid fa-arrow-left text-2xl w-8 h-8 flex items-center justify-center"
+          aria-hidden="true"
+        />
         <span className="text-sm uppercase">Voltar</span>
       </button>
 

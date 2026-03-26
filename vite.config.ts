@@ -1,7 +1,7 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react-swc';
-import { defineConfig } from 'vite';
 import type { Plugin } from 'vite';
+import { defineConfig } from 'vite';
 
 const siteData = {
   lang: 'pt-BR',
