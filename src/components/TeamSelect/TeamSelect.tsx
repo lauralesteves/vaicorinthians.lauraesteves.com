@@ -64,6 +64,7 @@ export function TeamSelect() {
           strokeWidth="1.5"
           stroke="currentColor"
           className={`team-select-chevron ${isOpen ? 'open' : ''}`}
+          aria-hidden="true"
         >
           <path
             strokeLinecap="round"
